@@ -1,0 +1,42 @@
+ @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.MATCH_PARENT, 1.0f
+        );
+
+        params.weight = 1;
+
+        LinearLayout bLayout = new LinearLayout((this));
+        bLayout.setOrientation(LinearLayout.VERTICAL);
+        setContentView(bLayout, params);
+
+        LinearLayout baseLayout = new LinearLayout((this));
+        baseLayout.setOrientation(LinearLayout.HORIZONTAL);
+
+        LinearLayout bottomLayout = new LinearLayout((this));
+        bottomLayout.setOrientation(LinearLayout.HORIZONTAL);
+
+        LinearLayout rightLayout = new LinearLayout((this));
+        rightLayout.setOrientation(LinearLayout.VERTICAL);
+
+        LinearLayout leftLayout = new LinearLayout((this));
+        leftLayout.setOrientation(LinearLayout.VERTICAL);
+
+        LinearLayout r1Layout = new LinearLayout((this));
+        r1Layout.setBackgroundColor(Color.BLUE);
+
+
+
+        bLayout.addView(baseLayout, params);
+        baseLayout.addView(leftLayout, params);
+        baseLayout.addView(rightLayout, params);
+        bLayout.addView(bottomLayout, params);
+        
+        bottomLayout.addView(r1Layout, params);
+
+    }
+}
