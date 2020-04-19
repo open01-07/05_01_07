@@ -1,0 +1,51 @@
+package com.example.ispyj.a5_7;
+
+import android.graphics.Color;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+public class MainActivity extends AppCompatActivity {
+
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // setContentView(R.layout.activity_main);
+
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.MATCH_PARENT, 1.0f
+        );
+
+        params.weight = 1;
+
+        LinearLayout bLayout = new LinearLayout((this));
+        bLayout.setOrientation(LinearLayout.VERTICAL);
+        setContentView(bLayout, params);
+
+        LinearLayout baseLayout = new LinearLayout((this));
+        baseLayout.setOrientation(LinearLayout.HORIZONTAL);
+
+        LinearLayout bottomLayout = new LinearLayout((this));
+        bottomLayout.setOrientation(LinearLayout.HORIZONTAL);
+
+        LinearLayout rightLayout = new LinearLayout((this));
+        rightLayout.setOrientation(LinearLayout.VERTICAL);
+
+        LinearLayout leftLayout = new LinearLayout((this));
+        leftLayout.setOrientation(LinearLayout.VERTICAL);
+
+        LinearLayout r1Layout = new LinearLayout((this));
+        r1Layout.setBackgroundColor(Color.YELLOW);
+
+        LinearLayout r2Layout = new LinearLayout((this));
+
+        bLayout.addView(baseLayout, params);
+        bLayout.addView(bottomLayout, params);
+        baseLayout.addView(leftLayout, params);
+        baseLayout.addView(rightLayout, params);
+       rightLayout.addView(r1Layout, params);
+        rightLayout.addView(r2Layout, params);
+    }
+}
